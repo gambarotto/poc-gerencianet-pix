@@ -7,15 +7,10 @@ const app = express();
 
 app.use(express.json());
 
-app.get('/',(req, res)=> {
-  return res.json({message:'olá'})
-})
-
 const reqGNAlready = GNRequest({
   clientID: process.env.GN_CLIENT_ID,
   clientSecret: process.env.GN_CLIENT_SECRET
 });
-
 
 app.get('/charge', async (req:Request, res:Response) => {
 
